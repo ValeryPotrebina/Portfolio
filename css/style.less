@@ -1,0 +1,29 @@
+// compress: true
+
+@import "vars";
+
+html {
+    font-size: 15px;
+
+}
+
+body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    color: @black;
+}
+
+// Свойство box-sizing применяется для изменения алгоритма расчёта ширины и высоты элемента. 
+// Согласно спецификации CSS ширина блока складывается из ширины контента ( width ), значений отступов ( margin ), полей ( padding ) и границ ( border ). 
+// Аналогично обстоит и с высотой блока.
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+// Поскольку работаем с Less можем выносить цвета в переменные 
+
+// Blocks
+@import "blocks/intro";
