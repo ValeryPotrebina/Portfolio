@@ -13,14 +13,15 @@
     font-family: inherit;
     line-height: 1.1;
     // btn
-    padding: 1.1rem 1.8rem;
+    // В em-ах, чтобы padding зависили от размера кнопки
+    padding: 1.05em 1.7em;
     border: 1px solid @gray;
     background: none;
     cursor: pointer;
     // a
     text-decoration: none;
-    //
-    border-radius: 30px;
+    // em зависит от изменения размера шрифта кнопки
+    border-radius: 1.8em;
     text-align: center;
 
     transition: background-color .2s linear,
@@ -42,4 +43,13 @@
         margin-left: 1rem;
     }
 
+
+    /* Modificators */
+
+    &--sm {
+        padding: 0.7em 1.1em;
+        font-size: 0.94rem;
+        font-weight: bold;
+        border-width: 2px;
+    }
 }
