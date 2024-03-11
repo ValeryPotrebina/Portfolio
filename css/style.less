@@ -13,6 +13,10 @@ body {
     font-size: 1rem;
     font-style: normal;
     color: @black;
+
+    &.no-scroll {
+        overflow: hidden;
+    }
 }
 
 // Свойство box-sizing применяется для изменения алгоритма расчёта ширины и высоты элемента. 
@@ -47,6 +51,14 @@ p {
 @import "blocks/helpers";
 @import "blocks/about";
 @import "blocks/reviews";
+@import "blocks/news.less";
+@import "blocks/articles";
+@import "blocks/footer";
+@import "blocks/modal";
+@import "blocks/modal-work";
+// @import "blocks/footer";
+// @import "blocks/footer";
+
 
 
 
