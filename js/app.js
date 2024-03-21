@@ -27,7 +27,38 @@ $(function () {
     })
 });
 
+$(function () {
+    let header = $("#header"),
+        scrollOffSet = $(window).scrollTop();
 
+    checkScrool(scrollOffSet)
+    $(window).on("scroll", function () {
+        scrollOffSet = $(this).scrollTop();
+        checkScrool(scrollOffSet);
+    });
+
+    function checkScrool(scrollOffSet) {
+        if (scrollOffSet > 0) {
+            header.addClass("shadow");
+
+        } else {
+            header.removeClass("shadow");
+        }
+    }
+
+});
+
+$("[data-scroll]").on("click", function (event) {
+    event.preventDefault();
+    var $this = $(this),
+        blockId = $this.data('scroll'),
+        blockOffSet = $(blockId).offset().top - 110;
+
+    $("html, body").animate({
+        scrollTop: blockOffSet
+    }, 700);
+    // console.log($this, blockId, blockOffSet);
+})
 //Modal
 
 const modalCall = $("[data-modal]");
@@ -111,5 +142,16 @@ $(".slickNext").on("click", function (event) {
     let currentSlider =
         $(this).parents('.modal').find('[data-slider="slick"]');
 
-        currentSlider.slick("slickNext");
+    currentSlider.slick("slickNext");
 })
+
+
+/* Burger
+===============*/
+
+const burger = $("#burger");
+const nav = $("#nav");
+$(burger).on("click", function (event) {
+    event.preventDefault();
+    nav.toggleClass("show");
+});
